@@ -42,3 +42,5 @@ To intentionally create a merge conflict, edit the same lines in one of:
 npm test
 npm run lint
 ```
+# CSP451 CheckPoint2
+Feature: Database connection module added
