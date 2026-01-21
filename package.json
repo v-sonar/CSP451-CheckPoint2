@@ -12,6 +12,7 @@
     "format:check": "node src/tests/format-lite.js"
   },
   "dependencies": {
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "sqlite3": "^5.1.7"
   }
 }
