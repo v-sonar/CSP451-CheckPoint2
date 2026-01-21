@@ -60,3 +60,28 @@ module.exports = {
   getUser,
   listUsers
 };
+// Add a new user
+function addUser(username, password) {
+  const stmt = db.prepare("INSERT INTO users (username, password) VALUES (?, ?)");
+  stmt.run(username, password, (err) => {
+    if (err) console.error("Error adding user:", err.message);
+    else console.log(`User ${username} added successfully`);
+  });
+  stmt.finalize();
+}
+
+// Get a user by username
+function getUser(username, callback) {
+  db.get("SELECT * FROM users WHERE username = ?", [username], (err, row) => {
+    if (err) return callback(err);
+    callback(null, row);
+  });
+}
+
+// List all users (for testing)
+function listUsers(callback) {
+  db.all("SELECT id, username FROM users", [], (err, rows) => {
+    if (err) return callback(err);
+    callback(null, rows);
+  });
+}
