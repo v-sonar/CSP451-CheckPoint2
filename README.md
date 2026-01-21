@@ -43,5 +43,8 @@ npm test
 npm run lint
 ```
 # CSP451 CheckPoint2
-Feature: User Authentication added with login route
+# CSP451 CheckPoint2
+Features:
+- User Authentication added with login route
+- Database connection module added
 

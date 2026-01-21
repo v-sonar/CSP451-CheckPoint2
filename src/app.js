@@ -19,6 +19,15 @@ app.use("/", viewRouter);
 app.use("/api", apiRouter);
 app.use("/auth", authRoutes);
 
+const { listUsers } = require("./db/database");
+
+app.get("/db-test", (req, res) => {
+  listUsers((err, users) => {
+    if (err) return res.status(500).json({ error: err.message });
+    res.json({ users });
+  });
+});
+
 // 404 handler
 app.use((req, res) => {
   res.status(404).json({ error: "Not Found" });
