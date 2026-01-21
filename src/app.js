@@ -3,6 +3,7 @@ const path = require("path");
 
 const { router: apiRouter } = require("./routes/api");
 const { router: viewRouter } = require("./routes/views");
+const authRoutes = require("./routes/authRoutes");
 
 const app = express();
 
@@ -16,6 +17,7 @@ app.use(express.static(path.join(__dirname, "..", "public")));
 // Routes
 app.use("/", viewRouter);
 app.use("/api", apiRouter);
+app.use("/auth", authRoutes);
 
 // 404 handler
 app.use((req, res) => {
