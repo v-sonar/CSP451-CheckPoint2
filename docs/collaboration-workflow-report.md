@@ -64,10 +64,6 @@ Thanks for the contribution! Before this PR can be merged, please address the fo
 Add input validation for the API endpoints.
 Include error handling logic for missing required fields.
 Please push fixes and request another review when done.
-   ```bash
-   git add .
-   git commit -m "fix(api): address requested review changes"
-   git push origin feature/api-endpoints
 
 
 ## 4) Merge Strategy
